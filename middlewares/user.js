@@ -1,3 +1,5 @@
+const Token = require('../helper/jwt/token.auth');
+
 const middlewares = {};
 const displayNameValidate = (req, res, next) => {
   const { displayName } = req.body;
@@ -41,5 +43,20 @@ const passwordValidate = (req, res, next) => {
   }
   next();
 };
-middlewares.user = [displayNameValidate, emailValidate, passwordValidate];
+
+const validToken = async (req, res, next) => {
+  const { authorization: token } = req.headers;
+  if (!token) {
+    return res.status(401).json({ message: 'Token not found' });
+  }
+  const { auth, payload } = await Token.verificateToken(token);
+  if (!auth) {
+    return res.status(401).json({ message: 'Expired or invalid token' });
+  }
+  req.UserId = payload.id;
+  next();
+};
+
+middlewares.createUser = [displayNameValidate, emailValidate, passwordValidate];
+middlewares.validToken = [validToken];
 module.exports = middlewares;

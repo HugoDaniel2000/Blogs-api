@@ -16,6 +16,19 @@ new Promise((resolve) => {
    })
  );
 
+ const verificateToken = (token) => (
+  new Promise((resolve) => {
+    JWT.verify(token, process.env.JWT_SECRET,
+     (err, decoded) => {
+       if (err) {
+         resolve({ auth: false });
+        }
+       resolve({ auth: true, payload: decoded.payload });
+       });
+     })
+   );
+
 module.exports = {
   generate,
+  verificateToken,
 };
