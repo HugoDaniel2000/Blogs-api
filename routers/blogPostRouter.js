@@ -10,4 +10,6 @@ middlewares.validToken,
 middlewaresBlogPost.createPost,
 blogPostController.createPost);
 
+router.get('/', middlewares.validToken, blogPostController.findAll);
+
 module.exports = router;
