@@ -12,6 +12,12 @@ const create = async ({ displayName, email, password, image }) => {
   return { code: 201, payload: { token } };
 };
 
+const findAll = async () => {
+  const users = await User.findAll();
+  return { code: 200, payload: users };
+};
+
 module.exports = {
   create,
+  findAll,
 };
