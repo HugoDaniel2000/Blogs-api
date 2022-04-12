@@ -9,14 +9,10 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     password: DataTypes.STRING,
     image: DataTypes.STRING,
-  },
-  {
-    timestamps: false,
-    tableName: 'Users',
-  });
-  // User.associate = (models) => {
-  //   User.hasOne(models.BlogsPosts,
-  //     { foreignKey: 'userId', as: 'BlogPosts' });
-  // };
+  }, { timestamps: false, tableName: 'Users' });
+  User.associate = (models) => {
+    User.hasMany(models.BlogPost,
+      { foreignKey: 'userId', as: 'BlogPost' });
+  };
   return User;
 };
