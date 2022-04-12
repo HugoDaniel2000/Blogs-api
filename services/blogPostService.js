@@ -17,7 +17,20 @@ const posts = await BlogPost.findAll({ include: [{ model: User, as: 'user' },
 { model: Category, as: 'categories', through: { attributes: [] } }] });
 return { code: 200, payload: posts };
 };
+
+const findById = async (id) => {
+  const post = await BlogPost.findOne({
+    where: { id },
+    include: [{ model: User, as: 'user' },
+  { model: Category, as: 'categories', through: { attributes: [] } }] });
+
+  if (!post) {
+    return { code: 404, payload: { message: 'Post does not exist' } };
+  }
+  return { code: 200, payload: post };
+};
 module.exports = {
   create,
   findAll,
+  findById,
 };
