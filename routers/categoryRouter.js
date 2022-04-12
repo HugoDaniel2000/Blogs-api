@@ -10,4 +10,6 @@ middlewares.validToken,
 middlewaresCategory.nameValidate,
 categoryController.createCategory);
 
+router.get('/', middlewares.validToken, categoryController.findAll);
+
 module.exports = router;
