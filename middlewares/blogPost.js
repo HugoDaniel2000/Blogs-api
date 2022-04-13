@@ -30,6 +30,17 @@ const categoryIdValidate = (req, res, next) => {
   next();
 };
 
+const categoryIdUpdateValidate = (req, res, next) => {
+  const { categoryIds } = req.body;
+  if (categoryIds) {
+    return res.status(400).json({
+      message: 'Categories cannot be edited',
+    });
+  }
+  next();
+};
+
 middlewares.createPost = [titleValidate, contentValidate, categoryIdValidate];
+middlewares.updatePost = [titleValidate, contentValidate, categoryIdUpdateValidate];
 
 module.exports = middlewares;
