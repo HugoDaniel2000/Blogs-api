@@ -43,9 +43,22 @@ const update = async ({ title, content }, userId, id) => {
   return { code: 200, payload: postUpdated };
 };
 
+const remove = async (userId, id) => {
+  const post = await BlogPost.findOne({ where: { id } });
+  if (!post) {
+    return { code: 404, payload: { message: 'Post does not exist' } };
+  }
+  if (userId !== post.dataValues.userId) {
+    return { code: 401, payload: { message: 'Unauthorized user' } };
+  }
+  await BlogPost.destroy({ where: { id } });
+  return { code: 204, payload: [] };
+};
+
 module.exports = {
   create,
   findAll,
   findById,
   update,
+  remove,
 };
