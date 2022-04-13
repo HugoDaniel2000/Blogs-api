@@ -5,10 +5,16 @@ const blogPostController = require('../controllers/blogPost/index');
 const middlewares = require('../middlewares/user');
 const middlewaresBlogPost = require('../middlewares/blogPost');
 
+router.put('/:id',
+middlewares.validToken,
+middlewaresBlogPost.updatePost,
+blogPostController.update);
+
 router.post('/',
 middlewares.validToken,
 middlewaresBlogPost.createPost,
 blogPostController.createPost);
+
 router.get('/:id', middlewares.validToken, blogPostController.findById);
 router.get('/', middlewares.validToken, blogPostController.findAll);
 
