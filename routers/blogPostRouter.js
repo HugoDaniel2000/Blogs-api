@@ -10,6 +10,8 @@ middlewares.validToken,
 middlewaresBlogPost.updatePost,
 blogPostController.update);
 
+router.delete('/:id', middlewares.validToken, blogPostController.remove);
+
 router.post('/',
 middlewares.validToken,
 middlewaresBlogPost.createPost,
