@@ -3,6 +3,7 @@ const findAll = require('./findAllPostController');
 const findById = require('./findByIdPostController');
 const update = require('./updatePostController');
 const remove = require('./deletePostController');
+const searchTerm = require('./searchTermPostController');
 
 module.exports = {
   createPost,
@@ -10,4 +11,5 @@ module.exports = {
   findById,
   update,
   remove,
+  searchTerm,
 };
