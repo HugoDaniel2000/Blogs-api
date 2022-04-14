@@ -11,9 +11,5 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     tableName: 'Categories',
   });
-  // User.associate = (models) => {
-  //   User.hasOne(models.BlogsPosts,
-  //     { foreignKey: 'userId', as: 'BlogPosts' });
-  // };
   return Category;
 };
