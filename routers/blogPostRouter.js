@@ -5,6 +5,8 @@ const blogPostController = require('../controllers/blogPost/index');
 const middlewares = require('../middlewares/user');
 const middlewaresBlogPost = require('../middlewares/blogPost');
 
+router.get('/search', middlewares.validToken, blogPostController.searchTerm);
+
 router.put('/:id',
 middlewares.validToken,
 middlewaresBlogPost.updatePost,
