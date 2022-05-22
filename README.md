@@ -1,1 +1,1 @@
-# trybe-project-blogs-api
+#blogs-api
