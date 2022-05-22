@@ -59,7 +59,6 @@ const remove = async (userId, id) => {
 const searchTerm = async (query) => {
   const postAll = await BlogPost.findAll({ include: [{ model: User, as: 'user' },
 { model: Category, as: 'categories', through: { attributes: [] } }] });
-    console.log(postAll);
   if (query.length === 0) {
     return { code: 200, payload: postAll };
   }
