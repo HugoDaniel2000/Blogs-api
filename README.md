@@ -28,7 +28,7 @@ A API a ser construída trata-se de um sistema de gerenciamento de post e usuár
 
 1. Como baixar o projeto
 
-- Realizar o git clone: `git clone git@github.com:marianasaraiva/trybe-store-manager.git`;
+- Realizar o git clone: `git clone git@github.com:HugoDaniel2000/Blogs-api.git`;
 
 > Instale as dependências com `npm install`
 > Execute o comando `npm run prestart` para inicar o banco de dados
