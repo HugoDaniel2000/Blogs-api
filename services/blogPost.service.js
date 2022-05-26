@@ -35,7 +35,6 @@ const findById = async (id) => {
 
 const update = async ({ title, content }, userId, id) => {
   const post = await BlogPost.findOne({ where: { id } });
-  console.log(post);
   if (!post || userId !== post.dataValues.userId) {
     throw generateError({ status: 401, message: 'Unauthorized user' });
   }
@@ -60,13 +59,14 @@ const remove = async (userId, id) => {
 };
 
 const searchTerm = async (query) => {
-  const postAll = await BlogPost.findAll({
-    include: [{ model: User, as: 'user' },
-    { model: Category, as: 'categories', through: { attributes: [] } }]
-  });
   if (query.length === 0) {
+    const postAll = await BlogPost.findAll({
+      include: [{ model: User, as: 'user' },
+      { model: Category, as: 'categories', through: { attributes: [] } }]
+    });
     return postAll;
   }
+  console.log(query);
   const post = await BlogPost.findAll({
     where: { [Op.or]: [{ title: query }, { content: query }] },
     include:

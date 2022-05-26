@@ -1,9 +1,9 @@
-const createPost = require('./createPostController');
-const findAll = require('./findAllPostController');
-const findById = require('./findByIdPostController');
-const update = require('./updatePostController');
-const remove = require('./deletePostController');
-const searchTerm = require('./searchTermPostController');
+const createPost = require('./createPost.controller');
+const findAll = require('./findAllPost.controller');
+const findById = require('./findByIdPost.controller');
+const update = require('./updatePost.controller');
+const remove = require('./deletePost.controller');
+const searchTerm = require('./searchTermPost.controller');
 
 module.exports = {
   createPost,

@@ -1,4 +1,4 @@
-const blogPostService = require('../../services/blogPostService');
+const blogPostService = require('../../services/blogPost.service');
 
 const findAll = async (_req, res, next) => {
   try {
