@@ -31,7 +31,9 @@ A API a ser construída trata-se de um sistema de gerenciamento de post e usuár
 - Realizar o git clone: `git clone git@github.com:HugoDaniel2000/Blogs-api.git`;
 
 > Instale as dependências com `npm install`
+
 > Execute o comando `npm run prestart` para inicar o banco de dados
+
 > Execute o comando `npm seed` para popular o banco de dados
 
 > Inicie o projeto com `npm start` ou `npm run dev`
