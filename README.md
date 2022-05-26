@@ -47,7 +47,7 @@ A API a ser construída trata-se de um sistema de gerenciamento de post e usuár
   HOSTNAME
   JWT_SECRET
   ```
-## Tabelas
+## :heavy_check_mark: Tabelas
 O banco tem quatro tabelas: _BlogPosts_, _Categories_, _PostsCategories_ e _Users_.
 
 2. Documentação da API: 
