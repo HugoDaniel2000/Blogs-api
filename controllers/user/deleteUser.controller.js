@@ -1,9 +1,9 @@
-const userService = require('../../services/userService');
+const userService = require('../../services/user.service');
 
 const remove = async (req, res, next) => {
   try {
     const result = await userService.remove(req.UserId);
-    return res.status(result.code).end();
+    return res.status(204).end();
   } catch (error) {
     next(error);
   }

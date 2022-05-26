@@ -3,7 +3,7 @@ const loginService = require('../../services/loginService');
 const login = async (req, res, next) => {
   try {
     const result = await loginService(req.body);
-    return res.status(result.code).json(result.payload);
+    return res.status(200).json(result);
   } catch (error) {
     next(error);
   }
