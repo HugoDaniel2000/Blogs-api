@@ -57,7 +57,6 @@ const remove = async (userId, id) => {
     throw generateError({ status: 401, message: 'Unauthorized user' });
   }
   await BlogPost.destroy({ where: { id } });
-  return [];
 };
 
 const searchTerm = async (query) => {
