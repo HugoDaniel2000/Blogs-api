@@ -1,10 +1,10 @@
 const blogPostService = require('../../services/blogPostService');
 
 const update = async (req, res, next) => {
-    const { id } = req.params;
+  const { id } = req.params;
   try {
     const result = await blogPostService.update(req.body, req.UserId, id);
-    return res.status(result.code).json(result.payload);
+    return res.status(200).json(result);
   } catch (error) {
     next(error);
   }
