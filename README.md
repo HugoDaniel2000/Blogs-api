@@ -44,7 +44,8 @@ A API a ser construída trata-se de um sistema de gerenciamento de post e usuár
   MYSQL_PASSWORD
   HOSTNAME
   JWT_SECRET
-```
+  ```
+## Tabelas
 O banco tem quatro tabelas: _BlogPosts_, _Categories_, _PostsCategories_ e _Users_.
 
 2. Documentação da API: 
