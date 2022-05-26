@@ -7,7 +7,9 @@ Projeto desenvolvido no módulo 24, durante o módulo de back-end no curso de de
 Construir uma API :
 
 -Criando associações entre tabelas usando models do sequelize
+
 -Criando endpoints para consumir o banco de dados
+
 -Fazer um CRUD com o ORM
 
 
