@@ -1,6 +1,4 @@
 # :dart: Projeto Blogs Api
-Projeto desenvolvido no módulo 24, durante o módulo de back-end no curso de desenvolvimento web da Trybe.
-
 
 ## :brain: Habilidades
 
@@ -47,7 +45,11 @@ A API a ser construída trata-se de um sistema de gerenciamento de post e usuár
   HOSTNAME
   JWT_SECRET
   ```
+  **⚠️ Atenção:**
+
+- Documentação da API: 
+  - [Disponivel neste link](https://documenter.getpostman.com/view/20065093/Uz5AtfEf)
 ## :heavy_check_mark: Tabelas
 O banco tem quatro tabelas: _BlogPosts_, _Categories_, _PostsCategories_ e _Users_.
 
-2. Documentação da API: 
+:wrench: Projeto desenvolvido no módulo 24, durante o módulo de back-end no curso de desenvolvimento web da Trybe.
